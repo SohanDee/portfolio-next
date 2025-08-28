@@ -23,11 +23,11 @@ It showcases my projects, skills, and experience in web development with smooth 
 
 1. Clone the repository:  
 ```bash
-git clone https://github.com/SohanDee/eatzy.git
+git clone https://github.com/SohanDee/portfolio-next.git
 ```
 2. Navigate to the project folder:
 ```bash
-cd eatzy
+cd portfolio-next
 ```
 3. Install dependencies:
 ```bash
