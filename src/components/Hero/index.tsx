@@ -41,10 +41,10 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-[100vw] h-[100vh] bg-[url(/images/hero.png)] bg-center bg-cover top-0 overflow-hidden relative">
+    <div className="w-[100vw] h-screen bg-[url(/images/hero.png)] bg-center bg-cover overflow-hidden relative">
       <div
         className="absolute whitespace-nowrap"
-        style={{ top: "calc(100% - 18rem)" }}
+        style={{ top: "calc(100% - 20rem)" }}
         ref={slider}
       >
         <p

@@ -1,5 +1,7 @@
+"use client";
 import "./globals.css";
-import { Navbar } from "../components/Navbar/Navbar";
+import { Navbar } from "../components/Navbar";
+import MenuButton from "@/components/Menu";
 
 export default function RootLayout({
   children,
@@ -8,9 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black">
-        <Navbar />
-        {children}
+      <body className="overscroll-none">
+          <Navbar />
+          <MenuButton />
+          {children}
       </body>
     </html>
   );
