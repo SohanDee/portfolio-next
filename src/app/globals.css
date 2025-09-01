@@ -16,3 +16,7 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+.body{
+  cursor: wait;
+}
