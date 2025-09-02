@@ -21,7 +21,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="overscroll-none">
+      <body className="overscroll-none" data-scroll-conta>
           <Navbar />
           <MenuButton />
           {children}

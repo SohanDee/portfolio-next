@@ -12,7 +12,7 @@ const About = () => {
           to life with precision.
         </p>
       </div>
-      <div className="flex justify-end mx-15 top-0" data-scroll data-scroll-speed={0.2}>
+      <div className="flex justify-end mx-15 top-0" data-scroll data-scroll-speed={0.1}>
         <p
           className="h-[12vw] w-[12vw] rounded-full bg-black text-white font-light text-xl flex justify-center items-center"
         >

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { delay, easeIn, motion } from "framer-motion";
-import { duration } from "@mui/material";
-import { init } from "next/dist/compiled/webpack/webpack";
+import { easeIn, motion } from "framer-motion";
 
 const slideUp = {
   initial: {

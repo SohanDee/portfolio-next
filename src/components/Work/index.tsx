@@ -43,7 +43,6 @@ const WorkGallery = () => {
       ))}
       </div>
       <Modal modal={modal} projects={projects}/>
-      <div className="h-[100vh]"></div>
     </div>
   );
 };

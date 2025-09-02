@@ -41,11 +41,13 @@ const Hero = () => {
   };
 
   return (
-    <div className="w-[100vw] h-screen bg-[url(/images/hero.png)] bg-center bg-cover overflow-hidden relative">
+    <div className="data-scroll-section w-[100vw] h-screen bg-[url(/images/hero.png)] bg-center bg-cover overflow-hidden relative">
       <div
         className="absolute whitespace-nowrap"
         style={{ top: "calc(100% - 20rem)" }}
         ref={slider}
+        data-scroll
+        data-scroll-speed = {0.2}
       >
         <p
           ref={firstText}
