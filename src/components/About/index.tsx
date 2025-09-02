@@ -1,6 +1,8 @@
+import Magnetic from "../Magnetic";
+
 const About = () => {
   return (
-    <div className="mt-36 mx-44">
+    <div className="mt-36 mx-44 relative data-scroll-section">
       <div className="flex gap-20 items-start">
         <div className="text-3xl font-light align-text-top leading-[1.5] w-[70%]">
           A passionate web developer and graphic designer blending creativity
@@ -12,14 +14,15 @@ const About = () => {
           to life with precision.
         </p>
       </div>
-      <div className="flex justify-end mx-15 top-0" data-scroll data-scroll-speed={0.1}>
-        <p
-          className="h-[12vw] w-[12vw] rounded-full bg-black text-white font-light text-xl flex justify-center items-center"
-        >
-          About me
-        </p>
+      <div className="absolute top-32 right-16" data-scroll
+          data-scroll-speed={0.2}>
+        <Magnetic className="h-[12vw] w-[12vw] bg-black rounded-full">
+          <div className="h-[100%] w-[100%] text-white font-light text-xl flex justify-center items-center">
+            About me
+          </div>
+        </Magnetic>
       </div>
-      <hr className="border-t-1 border-gray-400"/>
+      <hr className="border-t-1 border-gray-400 mt-40" />
     </div>
   );
 };

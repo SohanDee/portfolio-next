@@ -1,8 +1,16 @@
-import React from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import React, { useRef } from "react";
+import Magnetic from "../Magnetic";
 
 const Contact = () => {
+    const container = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target: container,
+        offset: ["start end", "end end"]
+    })
+    const x = useTransform(scrollYProgress, [0,1], [-100, 0]);
   return (
-    <div className="z-0 h-[100vh] bg-[#1a1a1a] flex flex-col justify-between">
+    <div ref={container} className="z-0 h-[100vh] bg-[#1a1a1a] flex flex-col justify-between">
       <div className="text-white">
         <div className="relative text-8xl font-light py-30 px-60 flex flex-col">
           <div className="flex gap-5">
@@ -11,18 +19,23 @@ const Contact = () => {
           </div>
           <div>together</div>
           <div className="flex flex-col justify-center items-end">
-            <div className="absolute text-lg h-[15vw] w-[15vw] bg-black flex items-center justify-center rounded-full m-12">
+            <Magnetic className="cursor-pointer absolute  h-[15vw] w-[15vw] m-12">
+            <motion.div style={{x}} className="text-lg w-full h-full bg-black flex items-center justify-center rounded-full">
               Get in touch
-            </div>
+            </motion.div>
+            </Magnetic>
             <hr className="my-14 w-[100%]" />
           </div>
           <div className="flex gap-12 text-sm">
+            <Magnetic className="">
             <a
               href="mailto:sohandeemantha@gmail.com"
               className="border-1 p-5 rounded-full cursor-pointer"
             >
               sohandeemantha@gmai.com
             </a>
+            </Magnetic>
+            <Magnetic className="">
             <a
               href="https://wa.me/94766397534"
               target="_blank"
@@ -31,6 +44,7 @@ const Contact = () => {
             >
               +94 76 639 7534
             </a>
+            </Magnetic>
           </div>
         </div>
       </div>

@@ -5,23 +5,23 @@ import Modal from "./Modal";
 
 const projects = [
   {
-    title: "Portfolio",
-    src: "/images/banner.jpg",
-    description: "Design and Development",
+    title: "Eatzy",
+    src: "/images/projects/eatzy.png",
+    description: "Food Ordering and Delivery",
     color: "#444234"
   },
   {
-    title: "Portfolio",
-    src: "/images/hero.png",
+    title: "Portfolio - Next.js",
+    src: "/images/projects/portfolio.png",
     description: "Design and Development",
     color: "#aaa583"
   },
-  {
-    title: "Portfolio",
-    src: "/images/banner.jpg",
-    description: "Design and Development",
-    color: "#22211a"
-  },
+  // {
+  //   title: "Portfolio",
+  //   src: "/images/banner.jpg",
+  //   description: "Design and Development",
+  //   color: "#22211a"
+  // },
 ];
 
 const WorkGallery = () => {
