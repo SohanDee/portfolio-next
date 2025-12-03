@@ -1,14 +1,14 @@
 "use client";
 import { easeInOut, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
-const words = ["Hello", "Hola", "你好", "नमस्ते", "مرحبا", "হ্যালো", "Olá"];
+const words = ["Hello", "Halo", "Hei", "Hej", "Hallo", "Salam", "Merhaba", "Namaste"];
 
 export default function Preloader() {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
@@ -67,12 +67,12 @@ export default function Preloader() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="z-50 w-screen h-screen fixed top-0 left-0 bg-[#121212] flex items-center justify-center"
+      className="z-50 w-screen h-screen fixed top-0 left-0 bg-black flex items-center justify-center"
     >
       {dimension.height > 0 && (
         <>
           <motion.p
-            className="text-6xl text-white z-10"
+            className="text-6xl text-white z-10 font-main-thin"
             variants={opacity}
             initial="initial"
             animate="enter"
@@ -84,7 +84,7 @@ export default function Preloader() {
               variants={curve}
               initial="initial"
               exit="exit"
-              className="fill-[#121212]"
+              className="fill-black"
               d={initialPath}
             ></motion.path>
           </svg>
