@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function RootLayout({ children }) {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -16,7 +17,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden overscroll-none scrollbar-hide">
       <body>
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}

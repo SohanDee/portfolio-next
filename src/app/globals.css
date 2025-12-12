@@ -6,3 +6,8 @@
   --font-main-thin: "poppins-thin", sans-serif; 
   --font-main-light: "poppins-light", sans-serif; 
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

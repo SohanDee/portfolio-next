@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { useLayoutEffect, useRef, useState } from "react";
 
 export default function Navbar() {
@@ -27,12 +27,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="flex justify-between text-xl font-main-light mx-4 md:mx-8 py-4">
-      <div>Sohan Dee</div>
+    <div className="z-50 flex justify-between text-xl font-main-light px-8 md:px-12 py-8 bg-transparent w-full absolute">
+      <div className="cursor-pointer">Sohan Dee</div>
       <div className="md:flex hidden gap-16 lg:gap-24">
-        <div>About</div>
-        <div>Projects</div>
-        <div>Contact</div>
+        <Link href="/about">
+            About
+        </Link>  
+        <div className="cursor-pointer">Projects</div>
+        <div className="cursor-pointer">Contact</div>
       </div>
       <div className="md:hidden">Menu</div>
       <div

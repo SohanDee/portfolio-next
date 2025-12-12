@@ -1,5 +1,5 @@
 "use client";
-import { easeInOut, motion } from "framer-motion";
+import { easeIn, easeInOut, easeOut, motion } from "framer-motion";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 const words = ["Hello", "Halo", "Hei", "Hej", "Hallo", "Salam", "Merhaba", "Namaste"];
@@ -38,7 +38,7 @@ export default function Preloader() {
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.4, ease: easeInOut, delay: 0.2 },
+      transition: { duration: 0.4, ease: easeIn, delay: 0.2 },
     },
   };
 
@@ -48,7 +48,7 @@ export default function Preloader() {
     },
     exit: {
       y: "-100vh",
-      transition: { duration: 0.4, ease: easeInOut, delay: 0.2 },
+      transition: { duration: 0.4, ease: easeIn, delay: 0.2 },
     },
   };
 
@@ -67,7 +67,7 @@ export default function Preloader() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="z-50 w-screen h-screen fixed top-0 left-0 bg-black flex items-center justify-center"
+      className="z-50 w-full h-screen fixed top-0 left-0 bg-black flex items-center justify-center"
     >
       {dimension.height > 0 && (
         <>
