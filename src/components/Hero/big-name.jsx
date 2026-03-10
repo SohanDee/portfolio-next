@@ -23,32 +23,33 @@ export default function BigName() {
   }, []);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     requestAnimationFrame(animation);
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ paused: true });
 
-    const tween = gsap.to(slider.current, {
-      scrollTrigger: {
+      tl.to(slider.current, { x: "-=300px" });
+
+      ScrollTrigger.create({
         trigger: document.documentElement,
         start: 0,
         end: window.innerHeight,
-        scrub: 0.2,
-        onUpdate: (e) => (direction.current = e.direction * -1),
-      },
-      x: "-=300px",
-    });
+        onUpdate: (e) => {
+          tl.play();
+          direction.current = e.direction * -1;
+        },
+      });
+    }, slider);
 
-    return () => {
-      tween.kill();
-      ScrollTrigger.killAll();
-    };
-  }, [animation]);
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <div className="z-50 w-screen">
+    <div className="data-scroll-section z-50 w-screen">
       <div
         ref={slider}
         className="absolute whitespace-nowrap w-screen overflow-hidden font-main-light top-[calc(100%-20rem)]"
+        data-scroll
+        data-scroll-speed={0.2}
       >
         <p
           ref={firstText}
