@@ -19,19 +19,19 @@ export default function About() {
 
       tl.fromTo(
         split.words,
-        { yPercent: 100, opacity: 0 },
+        { scaleY: 0, opacity: 0 },
         {
-          yPercent: 0,
+          scaleY: 1,
           opacity: 1,
-          duration: 0.25,
+          duration: 0.1,
           ease: "power1.in",
-          stagger: 0.005,
+          stagger: 0.01,
         },
       );
 
       ScrollTrigger.create({
         trigger: container.current,
-        start: "top 75%",
+        start: "top 95%",
         onEnter: () => tl.play(),
         onLeaveBack: () => tl.reverse(),
       });
