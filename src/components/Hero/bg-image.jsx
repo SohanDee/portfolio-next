@@ -9,7 +9,6 @@ export default function BgImage() {
           alt="Hero image"
           width={650}
           height={550}
-          quality={100}
           className="object-contain object-bottom"
         />
       </div>

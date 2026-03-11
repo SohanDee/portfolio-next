@@ -14,13 +14,19 @@ export default function About() {
       const split = SplitText.create(paragraph.current, {
         type: "words",
       });
-      
+
       const tl = gsap.timeline({ paused: true });
 
       tl.fromTo(
         split.words,
         { yPercent: 100, opacity: 0 },
-        { yPercent: 0, opacity:1, duration: 0.15, ease: "power1.in", stagger: 0.005 }
+        {
+          yPercent: 0,
+          opacity: 1,
+          duration: 0.25,
+          ease: "power1.in",
+          stagger: 0.005,
+        },
       );
 
       ScrollTrigger.create({
@@ -48,7 +54,9 @@ export default function About() {
         technology to craft engaging experiences. I bring ideas to life through
         clean code and visuals.
       </p>
-      <p className="align-text-top font-thin text-[clamp(12px,1vw,24px)]">
+      <p
+        className="align-text-top font-thin text-[clamp(12px,1vw,24px)]"
+      >
         Focused on innovation, seamless user experiences, and bringing ideas to
         life with precision.
       </p>

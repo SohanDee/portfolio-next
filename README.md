@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-This is my modern portfolio website built with **Next.js, JavScript, Tailwind CSS, Framer Motion, GSAP, and Locomotive Scroll**.  
+This is my modern portfolio website built with **Next.js, JavaScript, Tailwind CSS, Framer Motion, GSAP, and Locomotive Scroll**.  
 It showcases my projects, skills, and experience in web development with smooth page transitions, interactive animations, and responsive design.
 
 ## Features
