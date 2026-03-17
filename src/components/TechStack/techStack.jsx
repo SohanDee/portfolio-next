@@ -1,29 +1,9 @@
 "use client";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
-
-const technologies = [
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tomcat/tomcat-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg",
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg",
-];
+import { technologies } from "./technologies";
+import {motion, useScroll, useTransform } from "framer-motion";
 
 export default function TechStack() {
   const container = useRef(null);
@@ -49,8 +29,15 @@ export default function TechStack() {
     return () => ctx.revert();
   }, []);
 
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+
+  const height = useTransform(scrollYProgress, [0, 1], [100, 0]);
+
   return (
-    <div ref={container} className="my-[10vw] w-screen overflow-hidden">
+    <div ref={container} className="z-10 mt-[10vw] w-screen overflow-x-clip">
       <div ref={track} className="flex gap-20 w-max">
         {technologies.map((tech, i) => (
           <div key={"a" + i} className="relative w-[10vh] h-[10vh] shrink-0">
@@ -64,6 +51,12 @@ export default function TechStack() {
           </div>
         ))}
       </div>
+      <motion.div
+        style={{ height }}
+        className="relative mt-5 overflow-visible"
+      >
+        <div className="z-5 absolute -left-[10%] w-[120%] h-[1500%] rounded-b-[50%] bg-white shadow-[0_60px_50px_rgba(0,0,0,0.75)]"></div>
+      </motion.div>
     </div>
   );
 }

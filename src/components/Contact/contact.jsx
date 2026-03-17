@@ -9,10 +9,9 @@ const Contact = () => {
         target: container,
         offset: ["start end", "end end"]
     })
-    // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     const x = useTransform(scrollYProgress, [0,1], [-100, 0]);
   return (
-    <div ref={container} className="z-10 h-screen w-screen bg-[#1a1a1a] relative overflow-hidden">
+    <div ref={container} className="h-screen w-screen bg-[#1a1a1a] relative overflow-hidden">
         <div className="text-white font-light p-[15vw] md:p-[12vw]">
             <div className="flex flex-col items-center md:items-start text-7xl md:text-8xl mx-auto md:mx-0">
           <div className="flex flex-col md:flex-row items-center gap-5 justify-center md:justify-start text-center md:text-start">
