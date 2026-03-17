@@ -9,26 +9,28 @@ const Contact = () => {
         target: container,
         offset: ["start end", "end end"]
     })
+    // const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     const x = useTransform(scrollYProgress, [0,1], [-100, 0]);
   return (
-    <div ref={container} className="z-0 h-[100vh] bg-[#1a1a1a] flex flex-col justify-between">
-      <div className="text-white">
-        <div className="relative text-8xl font-light py-30 px-60 flex flex-col">
-          <div className="flex gap-5">
-            <div className="bg-[url('/Hero.png')] bg-cover bg-center w-[100px] h-[100px] inline-block rounded-full"></div>
+    <div ref={container} className="z-10 h-screen w-screen bg-[#1a1a1a] relative overflow-hidden">
+        <div className="text-white font-light p-[15vw] md:p-[12vw]">
+            <div className="flex flex-col items-center md:items-start text-7xl md:text-8xl mx-auto md:mx-0">
+          <div className="flex flex-col md:flex-row items-center gap-5 justify-center md:justify-start text-center md:text-start">
+            <div className="bg-[url('/profile.png')] bg-cover bg-center w-[20vw] h-[20vw] max-w-[100px] max-h-[100px] rounded-full"></div>
             <div>Let&#39;s work</div>
           </div>
-          <div>together</div>
-          <div className="flex flex-col justify-center items-end">
-            <motion.div style={{x}} className="text-lg w-full h-full bg-black flex items-center justify-center rounded-full">
+          <div>Together</div>
+          </div>
+          <div className="my-[6vh] md:my-[10vh] flex flex-col justify-center relative">
+            <motion.div style={{x}} className="text-sm md:text-lg w-1/2 max-w-[180px] aspect-square bg-black flex items-center justify-center rounded-full absolute start-1/3 md:start-1/2">
               Get in touch
             </motion.div>
-            <hr className="my-14 w-[100%]" />
+            <hr className="my-8 w-full" />
           </div>
-          <div className="flex gap-12 text-sm">
+          <div className="flex flex-col md:flex-row items-center gap-6 text-sm">
             <a
               href="mailto:sohandeemantha@gmail.com"
-              className="border-1 p-5 rounded-full cursor-pointer"
+              className="border p-5 rounded-full cursor-pointer"
             >
               sohandeemantha@gmai.com
             </a>
@@ -36,14 +38,13 @@ const Contact = () => {
               href="https://wa.me/94766397534"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-1 p-5 rounded-full cursor-pointer"
+              className="border p-5 rounded-full cursor-pointer"
             >
               +94 76 639 7534
             </a>
           </div>
         </div>
-      </div>
-      <div className="my-4 mx-6">
+      <div className="absolute bottom-3 left-6">
         <p className="text-sm text-gray-500">Socials</p>
         <div className="flex gap-5 text-white my-3">
           <a href="https://www.linkedin.com/in/sohan-wijemanna-202615221/" target="_blank">LinkedIn</a>
